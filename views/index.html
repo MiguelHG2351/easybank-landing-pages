@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Easybank landing page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header-site">
+      <div class="header-logo">
+        <img src="/assets/images/logo.svg" alt="Easybank logo" />
+      </div>
+      <div class="header-btn-menu">
+        <button class="btn btn-menu" id="btn-menu">
+          <i>
+            <img
+              src="/assets/images/icon-hamburger.svg"
+              id="logo-btn-menu"
+              alt="menu del encabezado"
+            />
+          </i>
+        </button>
+      </div>
+      <div class="header-menu" id="header-menu">
+        <nav class="header-nav">
+          <ul class="header-list">
+            <li class="header-list-item">Home</li>
+            <li class="header-list-item">About</li>
+            <li class="header-list-item">Contact</li>
+            <li class="header-list-item">Blog</li>
+            <li class="header-list-item">Careers</li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="mockups">
+      <div class="mockups-description">
+        <h1>Next generation</h1>
+        <p>
+          Take your financial lif online. Your Easybank account will be a
+          one-stop-shop for spendin, saving, budgeting, investing, and much more.
+        </p>
+        <button>Request invite</button>
+      </div>
+      <div class="mockup-image">
+        <img src="/public/images/image-mockups.png" alt="mockups example">
+      </div>
+    </section>
+    <div class="overlay" id="overlay"></div>
+    <script>
+      const $btnMenu = document.querySelector("#btn-menu");
+      const $headerMenu = document.querySelector("#header-menu");
+      const $btnLogo = document.querySelector("#logo-btn-menu");
+      const $overlay = document.querySelector("#overlay");
+
+      $btnMenu.addEventListener("click", function () {
+        $overlay.classList.toggle("active");
+        $headerMenu.classList.toggle("active");
+        if (
+          $btnLogo.getAttribute("src") === "/assets/images/icon-hamburger.svg"
+        ) {
+          $btnLogo.setAttribute("src", "/assets/images/icon-close.svg");
+        } else {
+          $btnLogo.setAttribute("src", "/assets/images/icon-hamburger.svg");
+        }
+      });
+    </script>
+  </body>
+</html>
