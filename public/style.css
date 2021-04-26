@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: 'Public Sans';
+    background-color: var(--light-grayish-blue);
 }
 
 :root {
@@ -21,6 +22,11 @@ body {
     transition: transform 0.12s ease-in;
 }
 
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+
 .overlay {
     display: none;
     position: fixed;
@@ -37,7 +43,9 @@ body {
 }
 
 .header-site {
-    position: sticky;
+    position: fixed;
+    left: 0;
+    right: 0;
     top: 0;
     height: 70px;
     padding: 18px;
@@ -63,6 +71,7 @@ body {
     width: 85%;
     margin: 0 auto;
     background-color: #fff;
+    border-radius: 12px;
 }
 
 .header-menu.active {
@@ -97,4 +106,60 @@ body {
 
 .btn-menu:hover {
     transform: scale(0.95);
+}
+
+.hero {
+    padding: 0 5% 5%;
+    background-color: #fff;
+}
+
+.hero-description {
+    text-align: center;
+}
+
+.hero-description h1 {
+    font-size: 28px;
+    color: var(--dark-blue);
+}
+
+.hero-description p {
+    color: var(--grayish-blue);
+}
+
+.btn-gradient-green {
+    border: none;
+    background-image: linear-gradient(to right, var(--lime-green), var(--brigth-cyan));
+    color: var(--white);
+    padding: 12px 26px;
+    font-size: 14px;
+    border-radius: 23px;
+}
+
+.why {
+    margin-top: 55px;
+}
+
+.why-option {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.why-option + .why-option {
+    margin-top: 20px;
+}
+
+.header-why-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-why-option-title {
+    color: var(--dark-blue);
+    font-weight: 300;
+}
+
+.why-option-content {
+    color: var(--grayish-blue);
 }

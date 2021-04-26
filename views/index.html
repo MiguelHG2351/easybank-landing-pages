@@ -8,28 +8,30 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/assets/images/favicon-32x32.png"
+      href="/public/images/favicon-32x32.png"
     />
 
     <title>Frontend Mentor | Easybank landing page</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="stylesheet" href="/public/style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <header class="header-site">
       <div class="header-logo">
-        <img src="/assets/images/logo.svg" alt="Easybank logo" />
+        <a href="#">
+          <img src="/public/images/logo.svg" alt="Easybank logo" />
+        </a>
       </div>
       <div class="header-btn-menu">
         <button class="btn btn-menu" id="btn-menu">
           <i>
             <img
-              src="/assets/images/icon-hamburger.svg"
+              src="/public/images/icon-hamburger.svg"
               id="logo-btn-menu"
               alt="menu del encabezado"
             />
@@ -48,19 +50,106 @@
         </nav>
       </div>
     </header>
-    <section class="mockups">
-      <div class="mockups-description">
-        <h1>Next generation</h1>
-        <p>
-          Take your financial lif online. Your Easybank account will be a
-          one-stop-shop for spendin, saving, budgeting, investing, and much more.
-        </p>
-        <button>Request invite</button>
-      </div>
-      <div class="mockup-image">
-        <img src="/public/images/image-mockups.png" alt="mockups example">
-      </div>
-    </section>
+    <main>
+      <section class="hero">
+        <div class="hero-image">
+          <img
+            src="/public/images/image-mockups.png"
+            class="responsive-img"
+            alt="mockups example"
+          />
+        </div>
+        <div class="hero-description">
+          <h1>Next generation digital banking</h1>
+          <p>
+            Take your financial lif online. Your Easybank account will be a
+            one-stop-shop for spendin, saving, budgeting, investing, and much
+            more.
+          </p>
+          <button class="btn btn-gradient-green">Request invite</button>
+        </div>
+      </section>
+      <section class="why">
+        <div class="why-title">
+          <h2>Why choose Easybank?</h2>
+          <p>
+            We leverage Open Banking to turn your bank account int your
+            financial hub. Control your finances line never before
+          </p>
+        </div>
+        <div class="why-options">
+          <div class="why-option">
+            <div class="header-why-option">
+              <div class="header-why-option-title">
+                <img
+                  src="/public/images/icon-online.svg"
+                  alt="online banking"
+                />
+              </div>
+              <div class="header-why-option-title">
+                <h3>Online Banking</h3>
+              </div>
+            </div>
+            <div class="why-option-content">
+              <p>
+                Our modern web and mobile applications allow you to keep track
+                of your finances wherever you are in the world.
+              </p>
+            </div>
+          </div>
+          <div class="why-option">
+            <div class="header-why-option">
+              <div class="header-why-option-title">
+                <img src="/public/images/icon-budgeting.svg" alt="Budgeting" />
+              </div>
+              <div class="header-why-option-title">
+                <h3>Simple Budgeting</h3>
+              </div>
+            </div>
+            <div class="why-option-content">
+              <p>
+                Our modern web and mobile applications allow you to keep track
+                of your finances wherever you are in the world.
+              </p>
+            </div>
+          </div>
+          <div class="why-option">
+            <div class="header-why-option">
+              <div class="header-why-option-title">
+                <img
+                  src="/public/images/icon-onboarding.svg"
+                  alt="Fast Obboarding"
+                />
+              </div>
+              <div class="header-why-option-title">
+                <h3>Fast Onboarding</h3>
+              </div>
+            </div>
+            <div class="why-option-content">
+              <p>
+                We don't do branches. Open your account in minutes online and
+                start taking control of your finances right away.
+              </p>
+            </div>
+          </div>
+          <div class="why-option">
+            <div class="header-why-option">
+              <div class="header-why-option-title">
+                <img src="/public/images/icon-api.svg" alt="Fast Obboarding" />
+              </div>
+              <div class="header-why-option-title">
+                <h3>Open API</h3>
+              </div>
+            </div>
+            <div class="why-option-content">
+              <p>
+                Manage your saving, investments, pension, and much more from one account. Tracking your money has never been easier.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <div class="overlay" id="overlay"></div>
     <script>
       const $btnMenu = document.querySelector("#btn-menu");
@@ -68,17 +157,20 @@
       const $btnLogo = document.querySelector("#logo-btn-menu");
       const $overlay = document.querySelector("#overlay");
 
-      $btnMenu.addEventListener("click", function () {
+      $btnMenu.addEventListener("click", toggleMenu);
+      $overlay.addEventListener("click", toggleMenu);
+      
+      function toggleMenu() {
         $overlay.classList.toggle("active");
         $headerMenu.classList.toggle("active");
         if (
-          $btnLogo.getAttribute("src") === "/assets/images/icon-hamburger.svg"
+          $btnLogo.getAttribute("src") === "/public/images/icon-hamburger.svg"
         ) {
-          $btnLogo.setAttribute("src", "/assets/images/icon-close.svg");
+          $btnLogo.setAttribute("src", "/public/images/icon-close.svg");
         } else {
-          $btnLogo.setAttribute("src", "/assets/images/icon-hamburger.svg");
+          $btnLogo.setAttribute("src", "/public/images/icon-hamburger.svg");
         }
-      });
+      }
     </script>
   </body>
 </html>

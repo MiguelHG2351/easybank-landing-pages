@@ -12,7 +12,7 @@ const home = require('./routes/index.routes')
 app.use(cors())
 app.use(express.urlencoded({extended: true})) // Body parser
 app.use(express.json())
-app.use('/assets', express.static('public'))
+app.use('/public', express.static('public'))
 
 // routes
 app.use('/', home)
