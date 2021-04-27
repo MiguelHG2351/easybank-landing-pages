@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Public Sans';
-    background-color: var(--light-grayish-blue);
+    background-color: #fff;
 }
 
 :root {
@@ -137,12 +137,28 @@ body {
 
 .why {
     margin-top: 55px;
+    background-color: var(--light-grayish-blue);
 }
 
-.why-option {
-    width: 80%;
+.why-container {
+    width: 85%;
     margin: 0 auto;
+    padding-top: 40px;
     text-align: center;
+}
+
+.why-title {
+    margin-bottom: 70px;
+}
+
+.why-title h2 {
+    color: var(--dark-blue);
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.why-title p {
+    color: var(--grayish-blue);
 }
 
 .why-option + .why-option {
@@ -155,11 +171,51 @@ body {
     align-items: center;
 }
 
-.header-why-option-title {
+.header-why-option-title h3 {
     color: var(--dark-blue);
     font-weight: 300;
+    font-size: 24px;
 }
 
 .why-option-content {
     color: var(--grayish-blue);
+}
+
+.last-article {
+    padding: 0 5%;
+}
+
+.card {
+    box-shadow: 0 0 16px .7px rgba(0, 0, 0, 0.10);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.card + .card {
+    margin-top: 50px;
+}
+
+.card-description {
+    padding: 14px;
+}
+
+.author small {
+    color: var(--grayish-blue);
+}
+
+.author h3 {
+    color: var(--dark-blue);
+    font-weight: 400;
+}
+
+.card-info {
+    color: var(--grayish-blue);
+}
+
+footer {
+    background-color: var(--dark-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 22px 0;
 }
