@@ -9,18 +9,18 @@ const config = require('./config')
 const home = require('./routes/index.routes')
 
 // settings
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', path.join(process.cwd(), 'views'))
 app.engine('hbs', handlebars({
     extname: '.hbs',
     defaultLayout: 'layout',
-    layoutsDir: path.join(__dirname, 'views', 'layout')
+    layoutsDir: path.join(process.cwd(), 'views', 'layout')
 }))
 app.set('view engine', '.hbs')
 
 // middleware
 app.use(express.urlencoded({extended: true})) // Body parser
 app.use(express.json())
-app.use(express.static('public'))
+app.use('/public', express.static(path.join(process.cwd(), 'public')))
 app.use(cors())
 
 // routes
